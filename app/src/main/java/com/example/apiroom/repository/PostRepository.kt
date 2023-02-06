@@ -7,10 +7,7 @@ import com.example.apiroom.resource.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface PostRepository {
-
-     fun getsotries(): Flow<Resource<List<postEntity>>>
+     fun getposts(): Flow<Resource<List<postEntity>>>
      suspend fun getsotriesfromdb(): Resource<List<PostDbModel>>
-
-
      suspend fun inserttopostdb( apilist : List<PostApiModel>):Boolean
 }

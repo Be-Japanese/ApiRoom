@@ -14,26 +14,19 @@ class RvAdapter(val rlist: Resource<List<postEntity>>):RecyclerView.Adapter<RvAd
 
     class viewholder(view: View):RecyclerView.ViewHolder(view)
     {
-
         var sttitle : TextView = view.findViewById(R.id.sttitle)
         var stbody : TextView = view.findViewById(R.id.stbody)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewholder {
-
         var x = LayoutInflater.from(parent.context).inflate(R.layout.post_list,parent,false)
-
         return viewholder(x)
-
     }
 
     override fun getItemCount(): Int {
        var count = 0
         if(rlist is Resource.Successful)
             count = rlist.data.size
-
-
         return count
     }
 
@@ -43,9 +36,6 @@ class RvAdapter(val rlist: Resource<List<postEntity>>):RecyclerView.Adapter<RvAd
         {
             holder.sttitle.text = rlist.data[position].title
             holder.stbody.text = rlist.data[position].body
-
-
-
         }
 
 

@@ -5,17 +5,12 @@ import com.example.apiroom.data.model.PostApiModel
 
 class Apimapper:Mapper<postEntity, PostApiModel> {
     override fun modeltoentity(model: PostApiModel): postEntity {
-
         return postEntity(
             id = model.id,
             title = model.title,
             body = model.body,
           userId = model.userId
-
         )
-
-
-
     }
 
     override fun entitytomodel(entity: postEntity): PostApiModel {

@@ -10,21 +10,15 @@ class RoomApiMapper:Mapper<PostApiModel,PostDbModel> {
             title = model.title,
             body = model.body,
             userId = model.userId
-
         )
-
-
-
     }
 
     override fun entitytomodel(entity: PostApiModel): PostDbModel {
-
        return PostDbModel(
             id = entity.id,
             title = entity.title,
             body = entity.body,
             userId = entity.userId
-
         )
 
     }
@@ -32,6 +26,5 @@ class RoomApiMapper:Mapper<PostApiModel,PostDbModel> {
     fun modellisttoentitylist(apilist:List<PostApiModel>):List<PostDbModel>
     {
         return apilist.map { entitytomodel(it) }
-
     }
 }

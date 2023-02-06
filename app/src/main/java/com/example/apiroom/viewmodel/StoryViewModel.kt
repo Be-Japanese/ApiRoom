@@ -11,20 +11,12 @@ import kotlinx.coroutines.flow.onEach
 
 class postViewModel:ViewModel() {
     val postrepo = PostRepositoryImp()
-
     var postlivedata = MutableLiveData<Resource<List<postEntity>>>()
-
     fun getallposts()
     {
-
-       postrepo.getsotries().onEach {
-
+       postrepo.getposts().onEach {
            postlivedata.value = it
-
        }.launchIn(viewModelScope)
-
-
-
     }
 
 }
