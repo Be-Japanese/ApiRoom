@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                 is Resource.Error ->
                 {
                     progressBar.visibility = ProgressBar.GONE
-                    Toast.makeText(this, it.error.toString(), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, it.error.toString(), Toast.LENGTH_LONG).show()
                 }
 
 

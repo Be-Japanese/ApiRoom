@@ -30,7 +30,7 @@ class PostRepositoryImp : PostRepository {
 
     override suspend fun getsotriesfromdb(): Resource<List<PostDbModel>> {
         if (Postdb is PostDb) {
-            val posts = Postdb.storiosDao()
+            val posts = Postdb.postsDao()
             try {
                 var posts = posts.getposts()
                 return (Resource.Successful(posts))
@@ -41,7 +41,7 @@ class PostRepositoryImp : PostRepository {
 
     override suspend fun inserttopostdb(apilist: List<PostApiModel>): Boolean {
         if (Postdb is PostDb) {
-            val posts = Postdb.storiosDao()
+            val posts = Postdb.postsDao()
             val rr = roomapi.modellisttoentitylist(apilist)
             for (s in rr) { var y = posts.insertAll(s) }
             return true
